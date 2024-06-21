@@ -43,6 +43,7 @@ function App() {
                   />
                 </div>
 
+
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end my-3">
                   <button className="btn btn-primary" onClick={fetchWeather}>Get Weather</button>
                   <button className="btn btn-info" onClick={fetchWeatherPlot}>Get Weather Plot</button>
@@ -53,15 +54,16 @@ function App() {
 
             <div className="col-md-6 text-center card">
               {weather && (
-                  <div>
-                    <h2>Weather Data for {weather.location}</h2>
-                    <p>Temperature: {weather.temperature}°C</p>
-                    <p>condition: {weather.condition}°C</p>
-                    <p>Date: {new Date(weather.date).toLocaleDateString()}</p>
-                  </div>
+                <div>
+                  <h2>Weather Data for {weather.location}</h2>
+                  <p>Temperature: {weather.temperature}°C</p>
+                  <p>condition: {weather.condition}°C</p>
+                  <p>Date: {new Date(weather.date).toLocaleDateString()}</p>
+                </div>
               )}
             </div>
           </div>
+
 
           <div className="row">
             <div className="col-md-12 card">
