@@ -12,7 +12,6 @@ function App() {
         try {
             const response = await axios.get(`http://localhost:5000/api/v1/weather?date=${date}`);
             setWeather(response.data);
-            console.log(response.data);(response.data);(response.data)
         } catch (error) {
             console.error('Error fetching weather data', error);
         }
@@ -55,8 +54,9 @@ function App() {
             <div className="col-md-6 text-center card">
               {weather && (
                   <div>
-                    <h2>Weather Data</h2>
+                    <h2>Weather Data for {weather.location}</h2>
                     <p>Temperature: {weather.temperature}°C</p>
+                    <p>condition: {weather.condition}°C</p>
                     <p>Date: {new Date(weather.date).toLocaleDateString()}</p>
                   </div>
               )}

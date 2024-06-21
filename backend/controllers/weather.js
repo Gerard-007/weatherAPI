@@ -29,6 +29,7 @@ const getWeather = async (req, res) => {
         weatherEntry = new Weather({
             date: new Date(date),
             temperature: weatherData.forecast.forecastday[0].day.avgtemp_c,
+            condition: weatherData.forecast.forecastday[0].day.condition.text,
             location: weatherData.location.name
         });
 
@@ -67,6 +68,7 @@ const getWeatherPlot = async (req, res) => {
                 const newWeatherEntry = new Weather({
                     date: new Date(formattedDate),
                     temperature: weatherData.forecast.forecastday[0].day.avgtemp_c,
+                    condition: weatherData.forecast.forecastday[0].day.condition.text,
                     location: weatherData.location.name
                 });
 
@@ -77,6 +79,8 @@ const getWeatherPlot = async (req, res) => {
             weatherDataArray.push({
                 date: formattedDate,
                 temperature: weatherData.temperature,
+                condition: weatherData.condition,
+                location: weatherData.location,
             });
         }
 

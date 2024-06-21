@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const WeatherSchema = new mongoose.Schema({
     date: { type: Date, required: true },
     temperature: { type: Number, required: true },
+    condition: { type: String, required: true },
     location: { type: String, required: true }
 });
 
